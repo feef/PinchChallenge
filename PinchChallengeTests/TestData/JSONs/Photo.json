@@ -1,0 +1,7 @@
+{
+    "albumId": 123,
+    "id": 456,
+    "title": "photo title value",
+    "url": "https://www.urlValue.com",
+    "thumbnailUrl": "https://www.thumbnailValue.com"
+}

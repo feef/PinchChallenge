@@ -1,16 +1,17 @@
 //
-//  AlbumTests.swift
+//  PhotoTests.swift
 //  PinchChallengeTests
 //
 //  Created by Feef Anthony on 5/24/20.
 //  Copyright © 2020 Feef Anthony. All rights reserved.
 //
 
+import Foundation
 import XCTest
 import CoreData
 @testable import PinchChallenge
 
-class AlbumTests: XCTestCase {
+class PhotoTests: XCTestCase {
     var context: NSManagedObjectContext!
     
     override func setUp() {
@@ -22,11 +23,13 @@ class AlbumTests: XCTestCase {
     }
     
     func testParsingFromAPIResponse() {
-        guard let album: Album = ManagedObjectTestHelper.loadModelFromFile(named: "Album", in: context) else {
+        guard let photo: Photo = ManagedObjectTestHelper.loadModelFromFile(named: "Photo", in: context) else {
             return
         }
-        XCTAssertEqual(album.userId, 123)
-        XCTAssertEqual(album.id, 456)
-        XCTAssertEqual(album.title, "album title value")
+        XCTAssertEqual(photo.albumId, 123)
+        XCTAssertEqual(photo.id, 456)
+        XCTAssertEqual(photo.title, "photo title value")
+        XCTAssertEqual(photo.thumbnailUrl, URL(string: "https://www.thumbnailValue.com"))
+        XCTAssertEqual(photo.url, URL(string: "https://www.urlValue.com"))
     }
 }
